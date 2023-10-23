@@ -28,3 +28,22 @@
 # Importando o pandas
 import pandas as pd
 
+# Lendo uma base no Pandas
+
+# em excel
+df=pd.read_excel(r'C:\Users\jharbes\Documents\GitHub\hashtagDatascience\004-pandas_e_numpy\03-comparando_o_pandas_com_o_excel-na_pratica-parte1\pandas_x_excel.xlsx')
+print(df)
+
+# em json
+df2 = pd.DataFrame(
+    {
+        "Name": [
+            "Braund, Mr. Owen Harris",
+            "Allen, Mr. William Henry",
+            "Bonnell, Miss. Elizabeth",
+        ],
+        "Age": [22, 35, 58],
+        "Sex": ["male", "male", "female"],
+    }
+)
+print(df2)
