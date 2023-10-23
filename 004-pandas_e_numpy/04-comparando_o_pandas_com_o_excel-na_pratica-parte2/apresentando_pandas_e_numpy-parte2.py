@@ -78,6 +78,37 @@ print(df.head())
 # Visualiza as ultimas 5 linhas da tabela
 print(df.tail())
 
+# Podemos tambem escolher no método o numero de linhas que desejamos ver, por exemplo:
+print(df.head(3))
 
 
 
+
+# Verificando o tipo de dado em cada uma das colunas
+print(df.info())
+
+print(df2.info())
+
+
+
+
+# Filtrando apenas valores de venda maiores que 800.000
+print(df[df['Venda $'] > 800000])
+
+# se fizermos diretamente teremos uma coluna booleana informando se a condicao é falsa ou nao
+print(df['Venda $'] > 800000)
+
+
+
+
+# Visualizando graficamente a relação entre segundos de tela e Venda $
+
+import matplotlib.pyplot as plt
+df.plot.scatter(x='Segundos', y='Venda $')
+plt.show()
+
+
+
+
+# Visualizando a média da venda
+print(df['Venda $'].mean())
