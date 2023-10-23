@@ -32,7 +32,6 @@ import pandas as pd
 
 # em excel
 df=pd.read_excel(r'C:\Users\jharbes\Documents\GitHub\hashtagDatascience\004-pandas_e_numpy\03-comparando_o_pandas_com_o_excel-na_pratica-parte1\pandas_x_excel.xlsx')
-print(df)
 
 # em json
 df2 = pd.DataFrame(
@@ -46,4 +45,39 @@ df2 = pd.DataFrame(
         "Sex": ["male", "male", "female"],
     }
 )
+
+
+
+
+# Verificando o tipo desse dado
+print(type(df)) # <class 'pandas.core.frame.DataFrame'>
+print(df.dtypes,end='\n\n')
+
+print(type(df2)) # <class 'pandas.core.frame.DataFrame'>
+print(df2.dtypes)
+
+
+
+
+# Visualizando a base
+print(df)
+
+# retorna informacoes sobre a tabela
+df.info()
+
 print(df2)
+
+df2.info()
+
+
+
+
+# Visualizando apenas as 5 primeiras linhas
+print(df.head())
+
+# Visualiza as ultimas 5 linhas da tabela
+print(df.tail())
+
+
+
+
