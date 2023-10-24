@@ -287,3 +287,26 @@ print(array_busca[0][3]) # 3
 # Buscando os elementos de índice 1 a 3 (incluindo o 3) na primeira linha
 print(array_busca[0,1:4]) # [1 2 3]
 print(array_busca[0][1:4]) # [1 2 3]
+
+
+# Buscando apenas os valores maiores que 5
+print(array_busca > 5)
+"""
+[[False False False False False]
+ [False  True  True  True  True]
+ [ True  True  True  True  True]]
+"""
+
+print(array_busca[array_busca > 5]) # [ 6  7  8  9 10 11 12 13 14]
+
+
+# Buscando valores maiores que 5 E (&) menores que 11
+print(array_busca[(array_busca > 5) & (array_busca < 11)]) # [ 6  7  8  9 10]
+
+print(array_busca[(array_busca > 5) | (array_busca < 11)]) # [ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14]
+
+
+# Visualizando o array
+novo_array=array_busca[(array_busca > 5) & (array_busca < 11)]
+
+print(novo_array) # [ 6  7  8  9 10]
