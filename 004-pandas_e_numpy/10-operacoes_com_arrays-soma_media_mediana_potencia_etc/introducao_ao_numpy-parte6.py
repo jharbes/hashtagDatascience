@@ -325,3 +325,65 @@ print(dados)
 [[0 1 2]
  [3 4 5]]
 """
+
+
+
+# Somando todos os valores
+print(np.sum(dados)) # 15
+
+
+
+# Somando apenas os valores da linha
+
+# soma os valores da primeira linha
+print(np.sum(dados[0])) # 3
+
+# soma os valores da segunda linha
+print(np.sum(dados[1])) # 12
+
+# soma os valores de cada uma das linhas
+print(np.sum(dados,axis=1)) # [ 3 12]
+
+# soma os valores de cada uma das colunas
+print(np.sum(dados, axis=0)) # [3 5 7]
+
+
+
+
+# Fazendo a soma acumulada desses valores
+print(np.cumsum(dados,axis=1))
+"""
+[[ 0  1  3]
+ [ 3  7 12]]
+"""
+
+print(dados.cumsum(axis=1))
+"""
+[[ 0  1  3]
+ [ 3  7 12]]
+"""
+
+
+
+# Somando apenas os valores da coluna
+print(np.sum(dados, axis=0)) # [3 5 7]
+
+print(dados.sum(axis=0)) # [3 5 7]
+
+
+
+# Somando 1 em todos os valores
+print(dados + 1)
+"""
+[[1 2 3]
+ [4 5 6]]
+"""
+
+
+
+# Multiplicando 2 em todos os valores do array
+print(dados * 2)
+"""
+[[ 0  2  4]
+ [ 6  8 10]]
+"""
