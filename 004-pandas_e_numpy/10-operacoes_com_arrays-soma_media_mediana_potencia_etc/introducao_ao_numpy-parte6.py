@@ -310,3 +310,18 @@ print(array_busca[(array_busca > 5) | (array_busca < 11)]) # [ 0  1  2  3  4  5 
 novo_array=array_busca[(array_busca > 5) & (array_busca < 11)]
 
 print(novo_array) # [ 6  7  8  9 10]
+
+
+
+
+# - **Operações com array**
+    # - https://numpy.org/doc/stable/user/absolute_beginners.html#basic-array-operations
+
+# Considerando o array abaixo
+dados = np.arange(6).reshape(2, 3)
+
+print(dados)
+"""
+[[0 1 2]
+ [3 4 5]]
+"""
