@@ -146,3 +146,114 @@ print(array2) # [1.  2.  3.  4.5 5. ]
 # E para o array3
 print(array3.dtype) # <U11
 print(array3) # ['1' '2' '3' '4' '5']
+
+
+
+
+# Criando um array qualquer de números inteiros
+vetor1=np.array([1,2,3,4,5])
+print(vetor1) # [1 2 3 4 5]
+
+
+# Criando um segundo array com valores decimais
+vetor2=np.array([1,2,3,4.7,5])
+print(vetor2) # [1.  2.  3.  4.7 5. ]
+
+
+# Criando um array apenas de valores zero
+vetor3=np.array([0,0,0,0])
+
+# aqui forçamos o tipo para ser int32 (o default é float)
+vetor4=np.zeros((4,4),dtype=np.int32)
+
+vetor5=np.ones((2,2),dtype=np.float32)
+
+# dtype é opcional
+vetor6=np.zeros((4,))
+
+print(vetor3) # [0 0 0 0]
+print(vetor4)
+"""
+[[0 0 0 0]
+ [0 0 0 0]
+ [0 0 0 0]
+ [0 0 0 0]]
+"""
+
+print(vetor5)
+"""
+[[1. 1.]
+ [1. 1.]]
+"""
+
+print(vetor6) # [0. 0. 0. 0.]
+
+
+
+
+# Criando um array com uma lista de valores
+vetor7=np.arange(101)
+
+print(vetor7)
+"""
+[  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17
+  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35
+  36  37  38  39  40  41  42  43  44  45  46  47  48  49  50  51  52  53
+  54  55  56  57  58  59  60  61  62  63  64  65  66  67  68  69  70  71
+  72  73  74  75  76  77  78  79  80  81  82  83  84  85  86  87  88  89
+  90  91  92  93  94  95  96  97  98  99 100]
+"""
+
+
+# Adicionando um intervalo para o array
+vetor8=np.arange(15,26)
+
+print(vetor8) # [15 16 17 18 19 20 21 22 23 24 25]
+
+
+
+
+# Adicionando um "passo" para o array
+vetor9=np.arange(5,100,5)
+
+print(vetor9) # [ 5 10 15 20 25 30 35 40 45 50 55 60 65 70 75 80 85 90 95]
+
+
+
+
+# Criando um novo array com os valores igualmente espaçados (utilizando o linspace)
+# O primeiro argumento será o primeiro elemento, o segundo será o ultimo elemento e o terceiro argumento será o numero de elementos desejados nesse intervalo
+vetor10=np.linspace(5,10,4)
+
+print(vetor10) # [ 5.          6.66666667  8.33333333 10.        ]
+
+
+
+
+# - O array de uma dimensão é o que chamamos de vetor e o de duas dimensões de matriz
+
+# Vamos considerar esses dados abaixo
+dados_venda = np.array([[150000,230000,82000,143000,184000],[5,8,8,5,12]])
+
+# Verificando a forma do array
+print(dados_venda.shape) # (2, 5)
+
+# Verificando o tipo dos dados
+print(dados_venda.dtype) # int32
+
+
+
+
+# Agora considerando esses novos dados
+dados_venda1 = np.array([['Lucas','Bia','Jean','Gabi','Pedro'],[150000,230000,82000,143000,184000]])
+
+# Verificando a forma do array
+print(dados_venda1)
+"""
+[['Lucas' 'Bia' 'Jean' 'Gabi' 'Pedro']
+ ['150000' '230000' '82000' '143000' '184000']]
+"""
+
+# Verificando o tipo dos dados
+# observe que o dado mais generico sera escolhido como o tipo de dado (todos os elementos do array tem que ter o mesmo tipo)
+print(dados_venda1.dtype) # <U11
