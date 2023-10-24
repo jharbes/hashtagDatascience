@@ -72,3 +72,28 @@ print(comissao2)
 salarios2=venda_valor2*comissao2/100
 
 print(salarios2)
+
+
+
+
+# Copiando o exemplo
+# criamos um array com o 'range' de 0 a 14 e colocamos em 3 linhas e 5 colunas
+a = np.arange(15).reshape(3, 5)
+print(a)
+"""
+[[ 0  1  2  3  4]
+ [ 5  6  7  8  9]
+ [10 11 12 13 14]]
+"""
+
+b = np.arange(2,7)
+print(b) # [2 3 4 5 6]
+
+c = np.arange(2,10,2)
+print(c) # [2 4 6 8]
+
+d = np.array([[1,2,3],[4,5,6]])
+print(d)
+# [[1 2 3]
+#  [4 5 6]]
+
