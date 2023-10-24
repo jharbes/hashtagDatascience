@@ -34,6 +34,9 @@ import numpy as np
 venda_valor = [150000,230000,82000,143000,184000]
 comissao = [5,8,8,5,12]
 
+print(type(venda_valor)) # <class 'list'>
+print(type(comissao)) # <class 'list'>
+
 venda_valor=np.array(venda_valor)
 comissao=np.array(comissao)
 
@@ -45,3 +48,27 @@ print(salarios) # [ 7500. 18400.  6560.  7150. 22080.]
 
 # Qual o tipo desse dado?
 print(type(salarios)) # <class 'numpy.ndarray'>
+
+
+
+
+# Transformando em um array
+
+venda_valor2 = [150000,230000,82000,143000,184000]
+comissao2 = [5,8,8,5,12]
+
+# o help imprime uma ajuda sobre o metodo ou atributo
+help(np.array)
+
+venda_valor2=np.array(venda_valor2)
+comissao2=np.array(comissao2)
+
+print(venda_valor2)
+print(comissao2)
+
+
+
+# Agora vamos conseguir fazer sendo um array
+salarios2=venda_valor2*comissao2/100
+
+print(salarios2)
