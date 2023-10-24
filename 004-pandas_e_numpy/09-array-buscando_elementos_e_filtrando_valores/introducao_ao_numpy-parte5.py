@@ -257,3 +257,33 @@ print(dados_venda1)
 # Verificando o tipo dos dados
 # observe que o dado mais generico sera escolhido como o tipo de dado (todos os elementos do array tem que ter o mesmo tipo)
 print(dados_venda1.dtype) # <U11
+
+
+
+
+# - **Assim como listas, também podemos buscar elementos no array utilizando seus índices**
+    # - https://numpy.org/doc/stable/user/basics.indexing.html
+
+# Utilizando o mesmo array do exemplo
+array_busca = np.arange(15).reshape(3, 5)
+
+print(array_busca)
+"""
+[[ 0  1  2  3  4]
+ [ 5  6  7  8  9]
+ [10 11 12 13 14]]
+"""
+
+
+# Buscando a primeira linha
+print(array_busca[0]) # [0 1 2 3 4]
+
+
+# Na primeira linha, buscando o elemento de índice 3
+print(array_busca[0,3]) # 3
+print(array_busca[0][3]) # 3
+
+
+# Buscando os elementos de índice 1 a 3 (incluindo o 3) na primeira linha
+print(array_busca[0,1:4]) # [1 2 3]
+print(array_busca[0][1:4]) # [1 2 3]
