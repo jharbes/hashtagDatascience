@@ -387,3 +387,60 @@ print(dados * 2)
 [[ 0  2  4]
  [ 6  8 10]]
 """
+
+
+
+# Verificando o menor valor desse array
+print(np.min(dados)) # 0
+
+print(np.min(dados,axis=0)) # [0 1 2]
+
+print(dados.min(axis=1)) # [0 3]
+
+
+
+# E agora o maior valor
+print(np.max(dados)) # 5
+
+print(np.max(dados,axis=0)) # [3 4 5]
+
+print(dados.max(axis=1)) # [2 5]
+
+
+
+# Calculando a média da primeira linha
+print(dados[0].mean()) # 1.0
+print(dados.mean(axis=1)[0]) # 1.0
+
+# E da segunda linha
+print(dados[1].mean()) # 4.0
+print(dados.mean(axis=1)[1]) # 4.0
+
+
+
+# Verificando a mediana
+print(np.median(dados)) # 2.5
+
+
+
+
+# - Inclusive podemos fazer operação entre arrays
+
+# Considerando esses 2 arrays
+array1 = np.array([1,2,3,4,5])
+array2 = np.array([7,8,9,10,11])
+
+
+
+# Somando os arrays
+print(array1 + array2) # [ 8 10 12 14 16]
+
+
+
+# Multiplicando esses arrays
+print(array1 * array2) # [ 7 16 27 40 55]
+
+
+
+# Potência
+print(array1 ** array2) # [       1      256    19683  1048576 48828125]
