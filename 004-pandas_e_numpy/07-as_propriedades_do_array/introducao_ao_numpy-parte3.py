@@ -97,3 +97,52 @@ print(d)
 # [[1 2 3]
 #  [4 5 6]]
 
+
+
+
+# Verificando a dimensão desse array
+print(a.ndim) # 2
+print(b.ndim) # 1
+print(c.ndim) # 1
+print(d.ndim) # 2
+
+
+
+
+# Verificando a forma do array
+print(a.shape) # (3, 5)
+print(b.shape) # (5,)
+print(c.shape) # (4,)
+print(d.shape) # (2, 3)
+
+
+
+
+# Verificando o tipo dos dados
+print(a.dtype) # int32
+print(b.dtype) # int32
+print(c.dtype) # int32
+print(d.dtype) # int32
+
+
+
+
+# Considerando os 3 arrays abaixo
+array1 = np.array([1,2,3,4,5])
+array2 = np.array([1,2,3,4.5,5])
+array3 = np.array([1,2,3,'4',5])
+
+
+# Verificando o tipo de dado do primeiro array e retornando esse array
+print(array1.dtype) # int32 
+print(array1) # [1 2 3 4 5]
+
+
+# Fazendo a mesma coisa para o array2
+print(array2.dtype) # float64
+print(array2) # [1.  2.  3.  4.5 5. ]
+
+
+# E para o array3
+print(array3.dtype) # <U11
+print(array3) # ['1' '2' '3' '4' '5']
