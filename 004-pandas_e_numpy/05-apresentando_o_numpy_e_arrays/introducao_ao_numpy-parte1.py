@@ -33,3 +33,15 @@ import numpy as np
 # Venda e comissão
 venda_valor = [150000,230000,82000,143000,184000]
 comissao = [5,8,8,5,12]
+
+venda_valor=np.array(venda_valor)
+comissao=np.array(comissao)
+
+salarios=venda_valor*comissao/100
+print(salarios) # [ 7500. 18400.  6560.  7150. 22080.]
+
+
+
+
+# Qual o tipo desse dado?
+print(type(salarios)) # <class 'numpy.ndarray'>
