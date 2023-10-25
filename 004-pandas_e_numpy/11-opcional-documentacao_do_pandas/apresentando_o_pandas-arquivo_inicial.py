@@ -93,3 +93,72 @@ print(df['Age'].values) # [22 35 58]
 # Visualizando o tipo de dado
 # vendo o tipo da coluna (series)
 print(type(df['Age']),end='\n\n') # <class 'pandas.core.series.Series'>
+
+
+
+
+"""
+### Importando uma base de dados
+
+- https://pandas.pydata.org/docs/getting_started/intro_tutorials/02_read_write.html
+    - A base de dados está em: `titanic.csv`
+
+"""
+
+# Importando o csv
+df2=pd.read_csv(r'C:\Users\jharbes\Documents\GitHub\hashtagDatascience\004-pandas_e_numpy\11-opcional-documentacao_do_pandas\titanic.csv')
+
+
+# Visualizando a base
+print(df2)
+
+
+# Visualizando as primeiras linhas
+print(df2.head())
+
+
+# Visualizando as 8 primeiras linhas
+print(df2.head(8))
+
+
+
+# Obtendo o tipo dos dados
+print(type(df2),end='\n\n') # <class 'pandas.core.frame.DataFrame'>
+
+print(df2.dtypes)
+
+print(df2.info())
+
+
+
+"""
+### Selecionando partes do DataFrame
+
+- https://pandas.pydata.org/docs/getting_started/intro_tutorials/03_subset_data.html
+
+"""
+
+# Selecionando apenas 1 coluna
+print(df2['Age'],end='\n\n')
+"""
+0      22.0
+1      38.0
+2      26.0
+3      35.0
+4      35.0
+       ... 
+886    27.0
+887    19.0
+888     NaN
+889    26.0
+890    32.0
+Name: Age, Length: 891, dtype: float64
+"""
+
+type(df2['Age']) # pandas.core.series.Series
+
+
+# Selecionando 2 ou mais colunas
+print(df2[['Age','Name']])
+
+
