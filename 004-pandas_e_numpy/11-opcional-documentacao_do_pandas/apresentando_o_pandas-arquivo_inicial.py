@@ -162,3 +162,48 @@ type(df2['Age']) # pandas.core.series.Series
 print(df2[['Age','Name']])
 
 
+
+
+# Fazendo um filtro nas linhas
+print(df2['Age'] > 35,end='\n\n') # nesse caso retorna apenas o booleano
+
+print(df2[df2['Age'] > 35],end='\n\n')
+
+print(df2[(df2['Age'] > 35) & df2['Age'] < 60])
+
+
+
+# Selecionando linhas e colunas específicas
+print(df2.loc[(df2['Age'] > 35) & (df2['Age'] < 60),['Name','Age']])
+
+
+
+# Substituindo valores
+df2.loc[(df2['Age'] > 35) & (df2['Age'] <= 40),'Age']=40
+
+print(df2.loc[(df2['Age'] > 35) & (df2['Age'] <= 40),'Age'])
+
+
+
+
+"""
+# Criando um plot
+
+- https://pandas.pydata.org/docs/getting_started/intro_tutorials/04_plotting.html
+
+"""
+
+# Criando um plot
+df2.plot() # so funciona no jupyter
+
+print(df2.Age)
+
+
+
+# Fazendo um scatter plot
+df2.plot.scatter(x='Survived',y='Age',alpha=0.5)
+
+
+
+# Mostrando um boxplot
+df2.plot.box()
