@@ -92,3 +92,55 @@ print(base_dic)
 
 # Verificando o tipo do dado
 type(base_dic) # pandas.core.frame.DataFrame
+
+
+
+
+"""
+**Cada coluna do DataFrame é uma Series, assim:
+
+series = DataFrame["coluna"]
+
+"""
+series_funcionarios = base_dic["funcionarios"]
+
+print(series_funcionarios)
+"""
+0    Lucas
+1      Bia
+2     Jean
+3     Gabi
+4    Pedro
+Name: funcionarios, dtype: object
+"""
+
+
+print(series_funcionarios.index) # RangeIndex(start=0, stop=5, step=1)
+
+print(series_funcionarios.values) # ['Lucas' 'Bia' 'Jean' 'Gabi' 'Pedro']
+
+
+print(type(series_funcionarios)) # <class 'pandas.core.series.Series'>
+
+
+
+"""
+**Para filtrar uma única coluna e continuar sendo um DataFrame, podemos fazer:
+
+series = DataFrame[["coluna"]]
+
+"""
+dataframe_funcionarios = base_dic[["funcionarios"]]
+
+print(dataframe_funcionarios)
+"""
+  funcionarios
+0        Lucas
+1          Bia
+2         Jean
+3         Gabi
+4        Pedro
+"""
+
+
+print(type(dataframe_funcionarios)) # pandas.core.frame.DataFrame
