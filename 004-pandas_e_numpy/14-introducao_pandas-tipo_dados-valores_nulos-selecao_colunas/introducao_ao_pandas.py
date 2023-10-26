@@ -144,3 +144,76 @@ print(dataframe_funcionarios)
 
 
 print(type(dataframe_funcionarios)) # pandas.core.frame.DataFrame
+
+
+
+
+"""
+## Podemos aplicar vários conceitos que vimos no NumPy!
+
+### Assim como o NumPy, ele também mostra as informações gerais
+
+"""
+# Mostrando somente o tipo dos dados
+print(base.dtypes)
+"""
+As of                   object
+Rank                     int64
+Year to Date Rank       object
+Last Week Rank          object
+Title                   object
+Type                    object
+Netflix Exclusive       object
+Netflix Release Date    object
+Days In Top 10           int64
+Viewership Score         int64
+dtype: object
+"""
+
+
+
+
+# Mostrando o tipo de dados e os valores vazios
+print(base.info())
+"""
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 7100 entries, 0 to 7099
+Data columns (total 10 columns):
+ #   Column                Non-Null Count  Dtype 
+---  ------                --------------  ----- 
+ 0   As of                 7100 non-null   object
+ 1   Rank                  7100 non-null   int64 
+ 2   Year to Date Rank     7100 non-null   object
+ 3   Last Week Rank        7100 non-null   object
+ 4   Title                 7100 non-null   object
+ 5   Type                  7100 non-null   object
+ 6   Netflix Exclusive     4599 non-null   object
+ 7   Netflix Release Date  7100 non-null   object
+ 8   Days In Top 10        7100 non-null   int64 
+ 9   Viewership Score      7100 non-null   int64 
+dtypes: int64(3), object(7)
+memory usage: 554.8+ KB
+
+"""
+
+
+
+# Contando os valores vazios por coluna
+print(base.isnull().sum())
+"""
+As of                      0
+Rank                       0
+Year to Date Rank          0
+Last Week Rank             0
+Title                      0
+Type                       0
+Netflix Exclusive       2501
+Netflix Release Date       0
+Days In Top 10             0
+Viewership Score           0
+dtype: int64
+"""
+
+
+# Mostrando a tabela e onde estão os valores vazios
+print(base.isnull())
