@@ -198,6 +198,14 @@ memory usage: 554.8+ KB
 
 
 
+
+# True = 1, False = 0, usamos essa logica para contar o numero de valores nulos da tabela
+print(False + False + False)
+print(True + False + False)
+print(True + True + False)
+print(True + True + True)
+
+
 # Contando os valores vazios por coluna
 print(base.isnull().sum())
 """
@@ -217,3 +225,39 @@ dtype: int64
 
 # Mostrando a tabela e onde estão os valores vazios
 print(base.isnull())
+
+
+
+
+"""
+### Podemos limitar a base escolhendo apenas as colunas que queremos trabalhar
+
+- Vamos falar disso agora para depois voltarmos na parte de estatística
+
+"""
+
+# Antes de falarmos de estatística, vamos precisar selecionar apenas as colunas que vamos trabalhar para evitar esse erro
+# com essa funcao esperamos calcular a media das colunas, porem nem todas elas sao numericas, portanto haverá erro na tentativa de calcular media das colunas nao numericas
+base.mean()
+
+
+
+
+# Podemos usar o nome da coluna entre aspas
+print(base["Title"])
+# ou
+print(base.Title)
+"""
+0       Tiger King: Murder, Mayhem …
+1                              Ozark
+2                       All American
+3                       Blood Father
+4                       The Platform
+                    ...             
+7095             Worst Roommate Ever
+7096               Vikings: Valhalla
+7097                         Shooter
+7098                         Shrek 2
+7099                           Shrek
+Name: Title, Length: 7100, dtype: object
+"""
