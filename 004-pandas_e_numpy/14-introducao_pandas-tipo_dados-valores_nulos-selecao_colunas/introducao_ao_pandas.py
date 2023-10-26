@@ -245,7 +245,8 @@ base.mean()
 
 # Podemos usar o nome da coluna entre aspas
 print(base["Title"])
-# ou
+
+# Ou usar o ponto (só funciona se o nome da coluna nao tiver caracteres espaço no nome)
 print(base.Title)
 """
 0       Tiger King: Murder, Mayhem …
@@ -261,3 +262,78 @@ print(base.Title)
 7099                           Shrek
 Name: Title, Length: 7100, dtype: object
 """
+
+
+
+
+# O value_counts() permite contar os valores de uma coluna:
+# base["Coluna"].value_counts()
+
+base["Title"].value_counts()
+"""
+Title
+Cocomelon                       428
+Ozark                            85
+Cobra Kai                        81
+Manifest                         80
+The Queenâs Gambit             73
+                               ... 
+The Office                        1
+Animals on the Loose: A You…      1
+Dark                              1
+The Secret Life of Pets 2         1
+Step Up Revolution                1
+Name: count, Length: 645, dtype: int64
+"""
+
+
+
+# Para selecionar mais de uma coluna incluiremos elas em uma lista
+lista_colunas = ["Rank","Days In Top 10","Viewership Score"]
+
+print(base[lista_colunas])
+"""
+      Rank  Days In Top 10  Viewership Score
+0        1               9                90
+1        2               5                45
+2        3               9                76
+3        4               5                30
+4        5               9                55
+...    ...             ...               ...
+7095     6              10                81
+7096     7              14               100
+7097     8               3                 7
+7098     9              10                33
+7099    10               7                12
+
+[7100 rows x 3 columns]
+"""
+
+print(base[lista_colunas].value_counts())
+"""
+Rank  Days In Top 10  Viewership Score
+10    1               1                   98
+9     1               2                   75
+7     1               4                   69
+3     1               8                   68
+6     1               5                   65
+                                          ..
+5     19              161                  1
+                      162                  1
+                      163                  1
+                      173                  1
+10    427             1472                 1
+Name: count, Length: 4079, dtype: int64
+"""
+
+
+
+
+"""
+### Voltando para as informações estatísticas
+
+Obs: Colunas que estejam do tipo objeto não vão ter informações estatísticas!
+
+"""
+# Selecionando a base que vamos mostrar informações estatísticas
+base_estatistica = base[["Rank","Days In Top 10","Viewership Score"]]
