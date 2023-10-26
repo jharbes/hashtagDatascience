@@ -46,3 +46,49 @@ base.shape # (7100, 10)
 # Visualizando primeiras e últimas linhas e tamanho da base (display funciona apenas no jupyter)
 # display(base)
 print(base)
+
+
+
+
+"""
+### DataFrame e Series
+
+**Essa base que acabamos de importar é um DataFrame!**
+"""
+type(base) # pandas.core.frame.DataFrame
+
+
+
+# **Também podemos criar um novo DataFrame usando um dicionário:**
+dic = {
+    "funcionarios": ['Lucas','Bia','Jean','Gabi','Pedro'],
+    "venda_valor": [150000,230000,82000,143000,184000],
+    "comissao": [5,8,8,5,12]
+}
+
+type(dic) # dict
+
+print(dic)
+"""
+{'funcionarios': ['Lucas', 'Bia', 'Jean', 'Gabi', 'Pedro'],
+ 'venda_valor': [150000, 230000, 82000, 143000, 184000],
+ 'comissao': [5, 8, 8, 5, 12]}
+"""
+
+
+# Transformando esse dicionário em um DataFrame
+base_dic = pd.DataFrame(dic)
+
+print(base_dic)
+"""
+  funcionarios  venda_valor  comissao
+0        Lucas       150000         5
+1          Bia       230000         8
+2         Jean        82000         8
+3         Gabi       143000         5
+4        Pedro       184000        12
+"""
+
+
+# Verificando o tipo do dado
+type(base_dic) # pandas.core.frame.DataFrame
