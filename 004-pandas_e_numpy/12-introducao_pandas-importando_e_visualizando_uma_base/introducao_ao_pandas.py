@@ -29,7 +29,7 @@ base = pd.read_csv("07_pandas.csv")
 print(base.head())
 
 # Visualizando as 15 primeiras linhas
-display(base.head(15))
+print(base.head(15))
 
 
 
