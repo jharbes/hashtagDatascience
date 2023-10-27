@@ -238,7 +238,7 @@ print(base.isnull())
 
 # Antes de falarmos de estatística, vamos precisar selecionar apenas as colunas que vamos trabalhar para evitar esse erro
 # com essa funcao esperamos calcular a media das colunas, porem nem todas elas sao numericas, portanto haverá erro na tentativa de calcular media das colunas nao numericas
-base.mean()
+# base.mean()
 
 
 
@@ -499,3 +499,18 @@ print(base.iloc[30:40,[0,4,5]])
 """
 import matplotlib.pyplot as plt
 
+# É possível fazer um histograma simples
+base["Days In Top 10"].plot.hist()
+plt.show()
+
+
+
+# Gráficos de barras
+base.Title.value_counts().head(15).plot.bar()
+plt.show()
+
+
+
+# E até gráficos mais complexos como o de densidade
+base["Viewership Score"].plot.kde()
+plt.show()
