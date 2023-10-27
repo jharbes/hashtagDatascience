@@ -56,3 +56,30 @@ print(df.head())
 
 # Visualizando as 5 últimas linhas
 print(df.tail())
+
+
+# Tamanho da base
+print(df.info())
+"""
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 52 entries, 0 to 51
+Data columns (total 9 columns):
+ #   Column       Non-Null Count  Dtype         
+---  ------       --------------  -----         
+ 0   Tipo         52 non-null     object        
+ 1   Data         52 non-null     datetime64[ns]
+ 2   Curtidas     52 non-null     int64         
+ 3   Comentários  52 non-null     int64         
+ 4   Tags         44 non-null     object        
+ 5   Pessoas      52 non-null     object        
+ 6   Campanhas    52 non-null     object        
+ 7   Carrossel    8 non-null      object        
+ 8   Interacoes   52 non-null     int64         
+dtypes: datetime64[ns](1), int64(3), object(5)
+memory usage: 3.8+ KB
+None
+"""
+
+
+# Se a base for pequena, o display mostra a base completa
+print(df)
