@@ -309,23 +309,6 @@ print(base[lista_colunas])
 [7100 rows x 3 columns]
 """
 
-print(base[lista_colunas].value_counts())
-"""
-Rank  Days In Top 10  Viewership Score
-10    1               1                   98
-9     1               2                   75
-7     1               4                   69
-3     1               8                   68
-6     1               5                   65
-                                          ..
-5     19              161                  1
-                      162                  1
-                      163                  1
-                      173                  1
-10    427             1472                 1
-Name: count, Length: 4079, dtype: int64
-"""
-
 
 
 
