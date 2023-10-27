@@ -318,5 +318,102 @@ print(base[lista_colunas])
 Obs: Colunas que estejam do tipo objeto não vão ter informações estatísticas!
 
 """
-# Selecionando a base que vamos mostrar informações estatísticas
+# Selecionando a base que vamos mostrar informações estatísticas (apenas bases numéricas para que possam haver calculos)
 base_estatistica = base[["Rank","Days In Top 10","Viewership Score"]]
+
+
+print(base_estatistica.head())
+"""
+   Rank  Days In Top 10  Viewership Score
+0     1               9                90
+1     2               5                45
+2     3               9                76
+3     4               5                30
+4     5               9                55
+"""
+
+
+print(base_estatistica.info())
+"""
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 7100 entries, 0 to 7099
+Data columns (total 3 columns):
+ #   Column            Non-Null Count  Dtype
+---  ------            --------------  -----
+ 0   Rank              7100 non-null   int64
+ 1   Days In Top 10    7100 non-null   int64
+ 2   Viewership Score  7100 non-null   int64
+dtypes: int64(3)
+memory usage: 166.5 KB
+None
+"""
+
+
+# Mostrando a média
+print(base_estatistica.mean())
+"""
+Rank                  5.500000
+Days In Top 10       24.123662
+Viewership Score    122.790141
+dtype: float64
+"""
+
+
+# Mostrando a contagem de registros
+print(base_estatistica.count())
+"""
+Rank                7100
+Days In Top 10      7100
+Viewership Score    7100
+dtype: int64
+"""
+
+
+# Mediana
+print(base_estatistica.median())
+"""
+Rank                 5.5
+Days In Top 10       7.0
+Viewership Score    50.0
+dtype: float64
+"""
+
+
+# Desvio Padrão
+print(base_estatistica.std())
+"""
+Rank                  2.872484
+Days In Top 10       58.473789
+Viewership Score    213.861642
+dtype: float64
+"""
+
+
+
+"""
+**Também podemos usar o describe para trazer todo o resumo estatístico:
+
+base.describe()
+
+"""
+
+print(base_estatistica.describe())
+"""
+              Rank  Days In Top 10  Viewership Score
+count  7100.000000     7100.000000       7100.000000
+mean      5.500000       24.123662        122.790141
+std       2.872484       58.473789        213.861642
+min       1.000000        1.000000          1.000000
+25%       3.000000        3.000000         19.000000
+50%       5.500000        7.000000         50.000000
+75%       8.000000       18.000000        128.000000
+max      10.000000      428.000000       1474.000000
+"""
+
+
+
+
+### Também conseguimos fazer filtros na base
+
+# Filtrando apenas programas que ficaram mais de 100 dias no Top 10
+print(base[base["Days In Top 10"] > 100])
