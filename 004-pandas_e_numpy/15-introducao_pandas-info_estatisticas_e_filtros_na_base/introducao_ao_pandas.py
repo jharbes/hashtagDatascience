@@ -417,3 +417,85 @@ max      10.000000      428.000000       1474.000000
 
 # Filtrando apenas programas que ficaram mais de 100 dias no Top 10
 print(base[base["Days In Top 10"] > 100])
+
+
+# linhas onde o valor da coluna Title for 'Ozark'
+print(base[base.Title == "Ozark"])
+
+
+# Podemos fazer filtros usando E / OU
+print(base[(base["Days In Top 10"] > 100) & (base["Title"] != "Cocomelon")])
+
+print(base[(base["Title"] == "Squid Game") | (base["Title"] == "Ozark")])
+
+print(base[base["Title"] == "Squid Game"])
+
+
+
+
+#### Uma forma muito útil de fazer seleção de dados é usando o .loc() ou o .iloc()
+
+# O .loc() (LOCATION) permite fazer a busca da mesma forma acima
+print(base.loc[base["Days In Top 10"] > 100])
+
+
+# Ele também permite usar argumentos lógicos
+print(base.loc[(base["Title"] == "Squid Game") | (base["Title"] == "Ozark")])
+
+
+# Ele permite filtrar colunas de forma muito prática
+base.loc[(base["Title"] == "Squid Game") | (base["Title"] == "Ozark"),["As of","Title",'Type']]
+"""
+           As of  Title     Type
+1     2020-04-01  Ozark  TV Show
+11    2020-04-02  Ozark  TV Show
+21    2020-04-03  Ozark  TV Show
+31    2020-04-04  Ozark  TV Show
+41    2020-04-05  Ozark  TV Show
+...          ...    ...      ...
+6954  2022-02-25  Ozark  TV Show
+6967  2022-02-26  Ozark  TV Show
+6979  2022-02-27  Ozark  TV Show
+6986  2022-02-28  Ozark  TV Show
+6996  2022-03-01  Ozark  TV Show
+
+[151 rows x 3 columns]
+"""
+
+
+
+
+# **Já o .iloc() vai usar o índice para filtrar**
+
+# iloc() - INDICE LOCATION
+# Buscando as linhas de 30 (inclusive) a 40 (exclusive)
+print(base.iloc[30:40])
+
+
+# Também posso usar para buscar apenas colunas específicas
+print(base.iloc[30:40,[0,4,5]])
+"""
+         As of                         Title     Type
+30  2020-04-04  Tiger King: Murder, Mayhem …  TV Show
+31  2020-04-04                         Ozark  TV Show
+32  2020-04-04                   Money Heist  TV Show
+33  2020-04-04                  All American  TV Show
+34  2020-04-04               Coffee & Kareem    Movie
+35  2020-04-04     How to Fix a Drug Scandal  TV Show
+36  2020-04-04                  The Roommate    Movie
+37  2020-04-04                    Nailed It!  TV Show
+38  2020-04-04                    Unorthodox  TV Show
+39  2020-04-04              The Players Club    Movie
+"""
+
+
+
+
+"""
+### Por fim, conseguimos fazer gráficos com o Pandas de forma bem simples
+
+    - https://pandas.pydata.org/docs/user_guide/visualization.html
+
+"""
+import matplotlib.pyplot as plt
+
